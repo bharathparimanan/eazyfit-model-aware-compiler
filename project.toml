@@ -1,0 +1,48 @@
+[project]
+name = "eazyfit-model-aware-compiler"
+version = "0.1.0"
+description = "Model-aware document and prompt compiler — signal not noise"
+requires-python = ">=3.11"
+
+[project.dependencies]
+fastapi = ">=0.115.0"
+uvicorn = { extras = ["standard"], version = ">=0.30.0" }
+python-dotenv = ">=1.0.0"
+python-multipart = ">=0.0.9"
+pydantic = ">=2.0.0"
+
+# orchestration
+langchain = ">=0.3.0"
+langchain-core = ">=0.3.0"
+langchain-openai = ">=0.2.0"
+langchain-community = ">=0.3.0"
+langchain-anthropic = ">=0.2.0"
+
+# observability
+langsmith = ">=0.1.0"
+
+# prompt compilation
+dspy-ai = ">=2.4.0"
+
+# document parsing
+llama-parse = ">=0.4.0"
+llama-index-core = ">=0.11.0"
+
+# semantic caching
+gptcache = ">=0.1.43"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.27.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uvicorn]
+host = "0.0.0.0"
+port = "8000"
+reload = true
